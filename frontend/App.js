@@ -6,6 +6,7 @@ import Login from "./src/pages/Login";
 import Main from "./src/pages/Main";
 import Apply from "./src/pages/Apply";
 import My from "./src/pages/My";
+import PlantDetail from "./src/pages/PlantDetail";
 
 import myIcon from "./src/images/home_icon.png";
 import applyIcon from "./src/images/apply_icon.png";
@@ -78,6 +79,11 @@ const App = () => {
         <Stack.Screen name="MainStack" options={{ headerShown: false }}>
           {() => <MainStack />}
         </Stack.Screen>
+        <Stack.Screen
+          name="PlantDetail"
+          options={{ headerShown: false }}
+          component={PlantDetail}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -13,16 +13,16 @@ import { Ionicons, FontAwesome5 } from "@expo/vector-icons";
 import getPlantDummyImage from "../utils/getPlantDummyImage";
 import NoSearchImage from "../images/noSearchImage.png";
 
-const Main = () => {
+const Main = ({navigation}) => {
   const dummyItems = [
     {
       id: "1",
       plantName: "포도",
       owner: "북두칠성",
-      plantType: "퀸로즈",
+      plantType: "칼랑코에",
       lastWater: "2일 전",
       request: "영양제 부탁드립니다!",
-      image: getPlantDummyImage(2),
+      image: getPlantDummyImage(1),
     },
     {
       id: "2",
@@ -40,7 +40,7 @@ const Main = () => {
       plantType: "다육이",
       lastWater: "4일 전",
       request: "부탁해요! 2주 뒤에 찾으러 갈게요~",
-      image: getPlantDummyImage(1),
+      image: getPlantDummyImage(2),
     },
   ];
 
@@ -137,7 +137,8 @@ const Main = () => {
             </View>
           ) : (
             searchResults.map((item, index) => (
-              <View
+              <TouchableOpacity
+                onPress={() => navigation.navigate("PlantDetail", { item })}
                 key={index}
                 style={[
                   styles.item,
@@ -180,7 +181,7 @@ const Main = () => {
                     요청 사항: {item.request}
                   </Text>
                 </View>
-              </View>
+              </TouchableOpacity>
             ))
           )}
         </ScrollView>
