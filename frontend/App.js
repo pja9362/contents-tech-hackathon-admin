@@ -71,11 +71,11 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen
+        <Stack.Screen
           name="Login"
           options={{ headerShown: false }}
           component={Login}
-        /> */}
+        />
         <Stack.Screen name="MainStack" options={{ headerShown: false }}>
           {() => <MainStack />}
         </Stack.Screen>
